@@ -16,7 +16,7 @@ jobs:
         pip install -r requirements.txt
     - name: Build EXE
       run: |
-        pyinstaller --noconsole --onefile server.py
+        pyinstaller --noconsole --onefile --hidden-import=vgamepad.win32.vigem_commons --hidden-import=vgamepad.win32.vigem_client server.py
     - name: Upload EXE
       uses: actions/upload-artifact@v4
       with:
